@@ -8,3 +8,13 @@ dump FORMAT:
 
 say_hello:
     say hello
+
+alias s := say_hello
+
+dep:
+    echo "is dep"
+    say hello
+
+has_dep: dep
+    echo "has dep"
+    say world
