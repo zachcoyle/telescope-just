@@ -1,10 +1,19 @@
-todo:
+PRs very welcome
 
-- [x] export the justfile to json
-- [x] feed the recipes into telescope
-- [x] execute selected recipe
-- [x] use the recipe documentation in the matching
+usage:
+```lua
+  require("just").just()
+```
+
+Features:
+ - quick access to all `just` recipes in a telescope dropdown
+ - recipes that require arguments will prompt for input
+ - vim message upon command completion (stdout only at the moment)
+
+
+todo:
+- [ ] code cleanup
 - [ ] register the telesope plugin
-- [x] handle recipes that take inputs (mimic behavior of telescope file browser)
 - [ ] more sophisticated error handling
+- [ ] documentation
 - [ ] tests 💀

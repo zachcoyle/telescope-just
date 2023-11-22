@@ -48,7 +48,7 @@ end
 
 local M = {}
 
-M.just = function(opts)
+M._just = function(opts)
   opts = opts or {}
   pickers
     .new(opts, {
@@ -89,6 +89,8 @@ M.just = function(opts)
     :find()
 end
 
-M.just(require("telescope.themes").get_dropdown({}))
+M.just = function()
+  M._just(require("telescope.themes").get_dropdown({}))
+end
 
 return M

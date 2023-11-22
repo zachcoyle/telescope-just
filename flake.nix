@@ -26,6 +26,7 @@
         packages = with pkgs; [
           jq
           just
+          neovim
         ];
       };
     })
