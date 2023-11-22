@@ -6,8 +6,11 @@ default:
 dump FORMAT:
     just --dump-format {{ FORMAT }} --dump | jq > just.json
 
+say THIS THAT:
+    sleep 2; say {{ THIS }}; sleep 2; say {{ THAT }}
+
 say_hello:
-    say hello
+    just say hello world;
 
 alias s := say_hello
 

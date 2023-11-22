@@ -5,6 +5,6 @@ todo:
 - [x] execute selected recipe
 - [x] use the recipe documentation in the matching
 - [ ] register the telesope plugin
-- [ ] handle recipes that take inputs (mimic behavior of telescope file browser)
+- [x] handle recipes that take inputs (mimic behavior of telescope file browser)
 - [ ] more sophisticated error handling
 - [ ] tests 💀
