@@ -16,16 +16,30 @@
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [devshell.overlays.default];
+        overlays = [devshell.overlays.default self.overlays.default];
       };
     in {
+      packages.default = pkgs.vimPlugins.telescope_just;
+
       devShell = pkgs.devshell.mkShell {
-        name = "telescope-just";
+        name = "telescope_just";
         packages = with pkgs; [
-          fzf
           jq
           just
         ];
       };
-    });
+    })
+    // {
+      overlays.default = final: prev: {
+        vimPlugins =
+          prev.vimPlugins
+          // {
+            telescope_just = prev.vimUtils.buildVimPlugin {
+              pname = "telescope_just";
+              version = "0.0.1";
+              src = ./.;
+            };
+          };
+      };
+    };
 }
